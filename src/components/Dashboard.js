@@ -49,7 +49,7 @@ const Dashboard = () => {
                       <Link to={`/products/update/${product._id}`} style={{ textDecoration: 'none', background: 'black', padding: '8px 40px', borderRadius: '7%', color: 'aquamarine', fontWeight: 'bold' }}>🔩 Update Product 🩺</Link>
                     </button>
                     <button style={{ textDecoration: 'none', fontSize: '20px', fontWeight: 'bold', width: '100%', padding: '15px', background: 'rgba(0,0,0,0.7)', borderRadius: '7%', cursor: 'pointer', color: 'ivory', margin: '15px' }}>
-                      <Link to={`/products/delete/${product._id}`} style={{ textDecoration: 'none', background: 'black', padding: '10px 40px', borderRadius: '7%', color: 'aquamarine', fontWeight: 'bold' }}>🗑 Delete Product 🎡🎡</Link>
+                      <Link to={`/products/delete/${product._id}`} style={{ textDecoration: 'none', background: 'black', padding: '10px 40px', borderRadius: '7%', color: 'aquamarine', fontWeight: 'bold' }}>✂ Delete Product 🎡🎡</Link>
                     </button>
                   </div>
                 </div>
