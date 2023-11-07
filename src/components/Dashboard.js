@@ -2,9 +2,12 @@ import '../App.css';
 import { React, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
   const [product, setProduct] = useState(null);
+
+const navigate = useNavigate()
 
   useEffect(() => {
     axios.get('http://localhost:8000/api/products')
@@ -16,6 +19,23 @@ const Dashboard = () => {
         console.log('🔭🎡🎡', err)
       });
   }, []);
+  // Pass the delete Idx to the handler with a call back from the onClick 
+  const deleteHandler = (deleteIdx) => {
+    console.log('🔭🎡🎡 Delete', deleteIdx);
+    axios.delete('http://localhost:8000/api/products/' + deleteIdx)
+      .then(res => {
+        console.log('🚀🚀🚀', res.data);
+        const fileteredProductsToDelete = product.products.filter((productElement, i) => {
+          return i !== deleteIdx
+        })
+        setProduct(fileteredProductsToDelete)
+        console.log(`delete, ${deleteIdx} ${fileteredProductsToDelete}`)
+        navigate('/');
+      })
+      .catch(err => {
+        console.log('🔭🎡🎡', err)
+      });
+  }
   return (
     <div>
       <div style={{ background: 'rgba(0,0,0,0.3)' }}>
@@ -48,9 +68,7 @@ const Dashboard = () => {
                     <button style={{ borderRadius: '7%', background: 'aquamarine', fontSize: '18px', padding: '15px', margin: '10px' }}>
                       <Link to={`/products/update/${product._id}`} style={{ textDecoration: 'none', background: 'black', padding: '8px 40px', borderRadius: '7%', color: 'aquamarine', fontWeight: 'bold' }}>🔩 Update Product 🩺</Link>
                     </button>
-                    <button style={{ textDecoration: 'none', fontSize: '20px', fontWeight: 'bold', width: '100%', padding: '15px', background: 'rgba(0,0,0,0.7)', borderRadius: '7%', cursor: 'pointer', color: 'ivory', margin: '15px' }}>
-                      <Link to={`/products/delete/${product._id}`} style={{ textDecoration: 'none', background: 'black', padding: '10px 40px', borderRadius: '7%', color: 'aquamarine', fontWeight: 'bold' }}>✂ Delete Product 🎡🎡</Link>
-                    </button>
+                    <button style={{ textDecoration: 'none', fontSize: '20px', fontWeight: 'bold', width: '100%', padding: '15px', background: 'rgba(0,0,0,0.7)', borderRadius: '7%', cursor: 'pointer', color: 'ivory', margin: '15px' }}onClick={()=>deleteHandler(product._id)}>✂ Delete Product 🎡🎡</button>
                   </div>
                 </div>
               </div>

@@ -54,7 +54,7 @@ const DeletePage = () => {
             <h1 style={{ borderRadius: '7%', background: 'coral', fontSize: '18px', padding: '15px' }}>
               <Link to={`/products/update/${oneSingleProduct.product._id}`} style={{ textDecoration: 'none', background: 'black', padding: '10px 25px', borderRadius: '7%', color: 'beige' }}>🔩 Update Product 🩺</Link>
             </h1>
-            <button style={{ textDecoration: 'none', fontSize: '20px', fontWeight: 'bold', width: '100%', padding: '25px', background: 'rgba(0,0,0,0.7)', borderRadius: '7%', cursor: 'pointer', color: 'ivory' }} onClick={() => deleteHandler(oneSingleProduct.product._id)}>🗑 Delete Product 🎡</button>
+            <button style={{ textDecoration: 'none', fontSize: '18px', fontWeight: 'bold', width: '100%', padding: '22px', background: 'rgba(0,0,0,0.7)', borderRadius: '7%', cursor: 'pointer', color: 'ivory' }} onClick={() => deleteHandler(oneSingleProduct.product._id)}>🗑 Delete Product 🎡</button>
 
             <Link to={'/'} style={{ textDecoration: 'none' }}><h4 style={{ color: 'coral', padding: '50px', background: 'rgba(0,0,0,0.7)', borderRadius: '7%' }}>🚀 Go Back </h4> </Link>
           </div>
