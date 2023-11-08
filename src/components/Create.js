@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 const Create = () => {
   const [errors, setErrors] = useState([]);
-  const [errorDescriptionCheck, setErrorDescriptionErrorCheck] = useState([])
+  const [errorDescriptionCheck, setErrorDescriptionCheck] = useState([])
   const [title, setTitle] = useState('')
   const [price, setPrice] = useState('')
   const [description, setDescription] = useState('')
@@ -34,7 +34,7 @@ const Create = () => {
         }
         // Set Errors
         setErrors(errorArr);
-        setErrorDescriptionErrorCheck(errorDescriptionCheck);
+        setErrorDescriptionCheck(errorDescriptionCheck);
       });
   }
 
