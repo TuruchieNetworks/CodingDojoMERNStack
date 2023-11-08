@@ -9,7 +9,7 @@ const Dashboard = () => {
   // const [flag, setFlag] = useState(false) 
   // Putting Flag in the useState is expensive
 
-const navigate = useNavigate()
+// const navigate = useNavigate()
 
   useEffect(() => {
     axios.get('http://localhost:8000/api/products')
@@ -46,13 +46,13 @@ const navigate = useNavigate()
               <div style={{ background: 'rgba(0,0,0,0.3)', padding:'15px 15%'}}>
                 {/* Product Info */}
                 <div style={{ background: 'rgba(0,0,0,0.3)',  borderRadius:'5%'}}>
-                  <h1 style={{ fontSize: '29px', fontWeight: 'bold', borderBottom: '1px solid aquamarine', padding: '15px', margin: '0', borderRadius: '7%' }}>
+                  <h1 style={{ fontSize: '27px', fontWeight: 'bold', borderBottom: '1px solid aquamarine', padding: '15px', margin: '0', borderRadius: '7%' }}>
                     <Link to={'/products/' + product._id} style={{ textDecoration: 'none', color: 'cyan' }}>
-                    {product.title}
+                    🏹 {product.title} 🐱‍🏍
                     </Link>
                   </h1>
                   <h1 style={{ fontSize: '20px', fontWeight: 'bold', background: 'azure', borderBottom: '1px solid aquamarine', padding: '15px', margin: '0', borderRadius: '7%' }}>
-                    <Link to={'/products/' + product._id} style={{ textDecoration: 'none', color: 'aquamarine', color: 'navy' }}>
+                    <Link to={'/products/' + product._id} style={{ textDecoration: 'none', color: 'navy' }}>
                     Price: {product.price} Dollars!
                     </Link>
                   </h1>
