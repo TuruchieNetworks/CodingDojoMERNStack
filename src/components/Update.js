@@ -44,8 +44,9 @@ const Update = () => {
   }
 
   return (
-    <div style={{background:'aliceblue', fontFamily:'cursive',margin:'0px 15%', height:'90vh', }}>
-      <form onSubmit={updateProduct} style={{display:'flex', flexDirection:'column',alignItems:'center'}}>
+    <div style={{padding:'15px', height:'85vh'}}>
+    <div style={{background:'aliceblue', fontFamily:'cursive',margin:'10px 15%', borderRadius:'5%'}}>
+      <form onSubmit={updateProduct} style={{display:'flex', flexDirection:'column',alignItems:'center',paddingBottom:'25px'}}>
         <div style={{display:'flex', flexDirection:'column',marginBottom:'5px',padding:'5px', width:'80%', fontSize:'22px'}}>
           <label style={{padding:'10px'}}  htmlFor='title'>Title</label>
           <input style={{padding:'10px',borderRadius:'5%'}}  type='text'name='title'value={title} onChange={e => setTitle(e.target.value)}placeholder='Product Title!'/>
@@ -62,7 +63,7 @@ const Update = () => {
         </div>
         <button style={{padding:'5px',margin:'15px', cursor:'pointer', width:'80%', fontSize:'26px', fontFamily:'cursive', fontWeight:'bold',borderRadius:'5%'}}>Submit</button>
       </form>
-    </div>
+    </div></div>
   )
 }
 
